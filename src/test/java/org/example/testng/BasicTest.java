@@ -2,6 +2,7 @@ package org.example.testng;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
+import org.example.utils.SeleniumDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -20,7 +21,8 @@ public class BasicTest {
 
     @BeforeClass
     public void beforeClass(){
-        driver = WebDriverManager.chromedriver().create();
+        driver = SeleniumDriver.getRemoteDriver();
+//        driver = WebDriverManager.chromedriver().create();
         driver.manage().window().maximize();
         executor = (JavascriptExecutor)driver;
     }

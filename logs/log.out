@@ -1,2 +1,6 @@
 27 Oct 2024 19:24:48,906 [main] INFO  org.example.testng.BasicTest  practiceFormTest - Start practiceFormTest
 27 Oct 2024 19:25:00,336 [main] INFO  org.example.testng.BasicTest  practiceFormTest - Finish practiceFormTest
+
+327 Oct 2024 20:26:43,488 [main] INFO  org.example.testng.BasicTest  practiceFormTest - Start practiceFormTest
+27 Oct 2024 20:27:28,211 [main] INFO  org.example.testng.BasicTest  practiceFormTest - Start practiceFormTest
+27 Oct 2024 20:27:54,955 [main] INFO  org.example.testng.BasicTest  practiceFormTest - Finish practiceFormTest
