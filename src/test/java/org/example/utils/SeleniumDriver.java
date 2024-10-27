@@ -43,7 +43,7 @@ public class SeleniumDriver {
             put("enableVNC", true);
             put("enableLog", true);
             put("noSandbox", true);
-            put("headless", true);
+//            put("headless", true);
         }});
         RemoteWebDriver remoteDriver = null;
         try {
