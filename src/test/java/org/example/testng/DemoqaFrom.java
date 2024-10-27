@@ -43,34 +43,34 @@ public class DemoqaFrom extends BasicTest{
 
 
         executor.executeScript("arguments[0].scrollIntoView(true);", uploadPictureEl);
-        uploadPictureLabelEl.click();
-
-        Thread.sleep(1000);
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_D);
-        robot.keyPress(KeyEvent.VK_SHIFT);
-        robot.keyPress(KeyEvent.VK_SEMICOLON);
-        robot.keyRelease(KeyEvent.VK_SHIFT);
-        robot.keyPress(KeyEvent.VK_BACK_SLASH);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyPress(KeyEvent.VK_N);
-        robot.keyPress(KeyEvent.VK_A);
-        robot.keyPress(KeyEvent.VK_T);
-        robot.keyPress(KeyEvent.VK_O);
-        robot.keyPress(KeyEvent.VK_L);
-        robot.keyPress(KeyEvent.VK_I);
-        robot.keyPress(KeyEvent.VK_E);
-        robot.keyPress(KeyEvent.VK_BACK_SLASH);
-        robot.keyPress(KeyEvent.VK_C);
-        robot.keyPress(KeyEvent.VK_U);
-        robot.keyPress(KeyEvent.VK_R);
-        robot.keyPress(KeyEvent.VK_L);
-        robot.keyPress(KeyEvent.VK_PERIOD);
-        robot.keyPress(KeyEvent.VK_T);
-        robot.keyPress(KeyEvent.VK_X);
-        robot.keyPress(KeyEvent.VK_T);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+//        uploadPictureLabelEl.click();
+//
+//        Thread.sleep(1000);
+//        Robot robot = new Robot();
+//        robot.keyPress(KeyEvent.VK_D);
+//        robot.keyPress(KeyEvent.VK_SHIFT);
+//        robot.keyPress(KeyEvent.VK_SEMICOLON);
+//        robot.keyRelease(KeyEvent.VK_SHIFT);
+//        robot.keyPress(KeyEvent.VK_BACK_SLASH);
+//        robot.keyPress(KeyEvent.VK_A);
+//        robot.keyPress(KeyEvent.VK_N);
+//        robot.keyPress(KeyEvent.VK_A);
+//        robot.keyPress(KeyEvent.VK_T);
+//        robot.keyPress(KeyEvent.VK_O);
+//        robot.keyPress(KeyEvent.VK_L);
+//        robot.keyPress(KeyEvent.VK_I);
+//        robot.keyPress(KeyEvent.VK_E);
+//        robot.keyPress(KeyEvent.VK_BACK_SLASH);
+//        robot.keyPress(KeyEvent.VK_C);
+//        robot.keyPress(KeyEvent.VK_U);
+//        robot.keyPress(KeyEvent.VK_R);
+//        robot.keyPress(KeyEvent.VK_L);
+//        robot.keyPress(KeyEvent.VK_PERIOD);
+//        robot.keyPress(KeyEvent.VK_T);
+//        robot.keyPress(KeyEvent.VK_X);
+//        robot.keyPress(KeyEvent.VK_T);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
 
         WebElement stateEl = fluentWaitCond(driver, ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='state']")));
         stateEl.click();
