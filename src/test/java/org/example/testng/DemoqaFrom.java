@@ -106,4 +106,66 @@ public class DemoqaFrom extends BasicTest{
         logger.info("Finish practiceFormTest");
     }
 
+    @Test
+    public void practiceFormTestSecond() throws AWTException, InterruptedException {
+        logger.info("Start practiceFormTest");
+        driver.get("https://demoqa.com/automation-practice-form");
+        WebElement firstNameEl = driver.findElement(By.cssSelector("#firstName"));
+        WebElement lastNameEl = driver.findElement(By.cssSelector("#lastName"));
+        WebElement userEmailEl = driver.findElement(By.xpath("//*[@id='userEmail']"));
+        WebElement genderEl = driver.findElement(By.xpath("//*[@id='gender-radio-1']"));
+        WebElement userNumberEl = driver.findElement(By.xpath("//*[@id='userNumber']"));
+        userNumberEl.sendKeys("0671777380");
+        firstNameEl.sendKeys("Anatolie");
+        lastNameEl.sendKeys("Snegur");
+        userEmailEl.sendKeys("bbs.md@mail.ru");
+        genderEl.sendKeys(" ");
+        executor.executeScript("document.getElementById('dateOfBirthInput').value='23 Apr 1077';");
+        WebElement uploadPictureEl = driver.findElement(By.xpath("//*[@id='uploadPicture']"));
+
+
+        executor.executeScript("var elem = document.evaluate(\"//footer\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;" +
+                "elem.parentNode.removeChild(elem);");
+
+        executor.executeScript("var elem = document.evaluate(\"//*[@id='fixedban']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;" +
+                "elem.parentNode.removeChild(elem);");
+
+
+
+        executor.executeScript("arguments[0].scrollIntoView(true);", uploadPictureEl);
+
+        WebElement stateEl = fluentWaitCond(driver, ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='state']")));
+        stateEl.click();
+        WebElement subStateSelEl = fluentWaitCond(driver, ExpectedConditions.visibilityOf(stateEl.findElement(By.xpath(".//*[contains(@class, 'menu')]"))));
+        List<WebElement> subStateListEl = fluentWaitCond(driver, ExpectedConditions.visibilityOfAllElements(subStateSelEl.findElements(By.xpath(".//*"))));
+        for (WebElement subStateEl: subStateListEl) {
+            if (subStateEl.getText().equals("Rajasthan")){
+                subStateEl.click();
+                break;
+            }
+        }
+
+        WebElement cityEl = driver.findElement(By.xpath("//*[@id='city']"));
+        cityEl.click();
+        WebElement subCityEl = cityEl.findElement(By.xpath(".//*[contains(@class, 'menu')]"));
+
+        List<WebElement> subCityListEl = (subCityEl.findElements(By.xpath(".//*")));
+        for (WebElement subCityItemEl: subCityListEl) {
+            if (subCityItemEl.getText().equals("Jaipur")){
+                subCityItemEl.click();
+                break;
+            }
+        }
+
+        WebElement submitEl = driver.findElement(By.xpath("//*[@id='submit']"));
+        submitEl.click();
+
+        WebElement studentNameEl = explicitWait(driver, ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Student Name']/../*[2]")), 10);
+        String studentName = studentNameEl.getText();
+        String expectedStudentName = STUDENT_NAME;
+        Assert.assertEquals(studentName, expectedStudentName, "Names are not equals");
+        Thread.sleep(4000);
+        logger.info("Finish practiceFormTest");
+    }
+
 }
